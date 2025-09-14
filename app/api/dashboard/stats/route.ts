@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
       totalRsvps,
       recentEvents,
     });
-  } catch (error) {
+  } catch (error : any) {
     console.error('Error fetching dashboard stats:', error);
     return NextResponse.json(
       { error: 'Failed to fetch dashboard stats' },

@@ -43,7 +43,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       events
     });
-  } catch (error) {
+  } catch (error :any) {
     console.error('Error fetching public events:', error);
     return NextResponse.json(
       { error: 'Failed to fetch public events' },

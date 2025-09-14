@@ -24,7 +24,7 @@ export async function requireAuth(request?: NextRequest) {
         } else {
           return null; // No token in headers
         }
-      } catch (error) {
+      } catch (error :any){
         // Headers not available in this context
         return null; // Return null instead of throwing
       }
@@ -55,7 +55,7 @@ export async function requireAuth(request?: NextRequest) {
     }
 
     return { user }; // Authentication successful
-  } catch (error) {
+  } catch (error :any) {
     console.error("Authentication error:", error);
     return null; // Any unexpected error
   }

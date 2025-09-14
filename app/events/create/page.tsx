@@ -88,7 +88,7 @@ function CreateEventContent() {
           variant: "destructive",
         });
       }
-    } catch (error) {
+    } catch (error : any) {
       console.error("Error creating event:", error);
       toast({
         title: "Error",

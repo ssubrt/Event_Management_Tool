@@ -83,7 +83,7 @@ function EventsContent() {
       } else {
         toast.error("Failed to fetch events");
       }
-    } catch (error) {
+    } catch (error :any) {
       console.error("Error fetching events:", error);
       toast.error("Failed to fetch events");
     } finally {
@@ -112,7 +112,7 @@ function EventsContent() {
         const error = await response.json();
         toast.error(error.error || "Failed to create event");
       }
-    } catch (error) {
+    } catch (error :any) {
       toast.error("An unexpected error occurred");
     } finally {
       setIsSubmitting(false);
@@ -143,7 +143,7 @@ function EventsContent() {
         const error = await response.json();
         toast.error(error.error || "Failed to update event");
       }
-    } catch (error) {
+    } catch (error :any) {
       toast.error("An unexpected error occurred");
     } finally {
       setIsSubmitting(false);
@@ -169,7 +169,7 @@ function EventsContent() {
         const error = await response.json();
         toast.error(error.error || "Failed to delete event");
       }
-    } catch (error) {
+    } catch (error :any) {
       toast.error("An unexpected error occurred");
     }
   };

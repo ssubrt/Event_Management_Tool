@@ -73,7 +73,7 @@ function PublicEvents() {
       } else {
         toast.error("Failed to load public events");
       }
-    } catch (error) {
+    } catch (error : any) {
       console.error("Error loading public events:", error);
       toast.error("Error loading public events");
     } finally {

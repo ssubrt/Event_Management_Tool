@@ -68,7 +68,7 @@ export function RSVPForm({ eventId, eventTitle }: RSVPFormProps) {
 
       setSuccess(true);
       form.reset();
-    } catch (err) {
+    } catch (err : any) {
       setError(err instanceof Error ? err.message : "An unexpected error occurred");
     } finally {
       setIsLoading(false);
