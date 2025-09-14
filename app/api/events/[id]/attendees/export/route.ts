@@ -17,7 +17,7 @@ export async function GET(
       role: string;
       [key: string]: any;
     };
-    const user = session.user as User;
+    const user = session?.user as User;
 
     // Check if user owns the event or has admin/staff role
     const event = await prisma.event.findUnique({

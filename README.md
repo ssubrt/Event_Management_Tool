@@ -200,7 +200,6 @@ The application uses a PostgreSQL database with the following main entities:
 ### Authentication
 - `POST /api/auth/register` - User registration
 - `POST /api/auth/login` - User login
-- `GET /api/auth/me` - Get current user
 
 ### Events
 - `GET /api/events` - List events (with filters)

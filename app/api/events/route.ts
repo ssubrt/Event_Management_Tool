@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
 
     // Build where clause with proper typing
     const where: any = {
-      creatorId: session.user.id,
+      creatorId: session?.user.id,
     };
 
     // Only add status filter if it's a valid EventStatus
@@ -90,8 +90,8 @@ export async function POST(request: NextRequest) {
     const event = await prisma.event.create({
       data: {
         ...validatedData,
-        creatorId: session.user.id,
         status: 'PUBLISHED',
+        creator: { connect: { id: session?.user.id } },
       },
       include: {
         creator: {

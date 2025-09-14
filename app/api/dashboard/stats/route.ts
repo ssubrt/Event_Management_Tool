@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
     // Get stats based on user role
     let whereClause: any = {};
     
-    if (session.user.role === 'EVENT_OWNER') {
+    if (session?.user.role === 'EVENT_OWNER') {
       whereClause = { creatorId: session.user.id };
     }
     // For ADMIN and STAFF, show all events

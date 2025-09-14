@@ -5,7 +5,6 @@ import { useAppSelector } from "@/lib/hooks";
 import { useRouter } from "next/navigation";
 import { AuthProvider } from "@/components/auth/auth-provider";
 import { StatsCards } from "@/components/dashboard/stats-cards";
-import { EventCard } from "@/components/events/event-card";
 import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";

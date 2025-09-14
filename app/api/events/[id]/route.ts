@@ -75,8 +75,8 @@ export async function PUT(
       );
     }
 
-    if (existingEvent.creatorId !== session.user.id && 
-        !['ADMIN', 'STAFF'].includes(session.user.role)) {
+    if (existingEvent.creatorId !== session?.user.id && 
+        !['ADMIN', 'STAFF'].includes(session?.user.role ?? '')) {
       return NextResponse.json(
         { error: 'Forbidden' },
         { status: 403 }
@@ -131,8 +131,8 @@ export async function DELETE(
       );
     }
 
-    if (existingEvent.creatorId !== session.user.id && 
-        session.user.role !== 'ADMIN') {
+    if (existingEvent.creatorId !== session?.user.id && 
+        session?.user.role !== 'ADMIN') {
       return NextResponse.json(
         { error: 'Forbidden' },
         { status: 403 }
