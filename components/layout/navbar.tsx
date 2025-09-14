@@ -37,7 +37,8 @@ export function Navbar() {
 
   const navItems = [
     { href: "/dashboard", label: "Dashboard", icon: Home },
-    { href: "/events", label: "Events", icon: Calendar }
+    { href: "/events", label: "Events", icon: Calendar },
+    { href: "/public-events", label: "Public Events", icon: Users },
   ];
 
   const handleSignOut = () => {

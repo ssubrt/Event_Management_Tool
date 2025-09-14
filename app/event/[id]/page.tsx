@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link"; // Import Link
 import { format } from "date-fns";
 import { prisma } from "@/lib/prisma";
 import { RSVPForm } from "@/components/events/rsvp-form";
@@ -6,7 +7,8 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Calendar, MapPin, Users, Clock, User } from "lucide-react";
+import { Button } from "@/components/ui/button"; // Import Button
+import { Calendar, MapPin, Users, Clock, User, ArrowLeft } from "lucide-react"; // Import ArrowLeft icon
 
 interface EventPageProps {
   params: {
@@ -62,6 +64,16 @@ export default async function PublicEventPage({ params }: EventPageProps) {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Back Button */}
+          <div className="mb-4">
+            <Button variant="ghost" size="sm" asChild>
+              <Link href="/dashboard">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Dashboard
+              </Link>
+            </Button>
+          </div>
+          
         <div className="grid gap-8 lg:grid-cols-3">
           {/* Event Details */}
           <div className="lg:col-span-2 space-y-6">

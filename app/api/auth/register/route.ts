@@ -10,7 +10,7 @@ const registerSchema = z.object({
   role: z.enum(['ADMIN', 'STAFF', 'EVENT_OWNER']).default('EVENT_OWNER'),
 });
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const validatedData = registerSchema.parse(body);
