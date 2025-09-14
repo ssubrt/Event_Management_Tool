@@ -111,7 +111,7 @@ if (authLoading || !isAuthenticated || !user) {
       } else {
         toast.error("Failed to fetch event details");
       }
-    } catch (error) {
+    } catch (error :any) {
       console.error("Error fetching event details:", error);
       toast.error("An error occurred while fetching event details");
     } finally {
@@ -142,7 +142,7 @@ if (authLoading || !isAuthenticated || !user) {
       } else {
         toast.error("Failed to export attendees");
       }
-    } catch (error) {
+    } catch (error :any) {
       console.error("Error exporting attendees:", error);
       toast.error("An error occurred while exporting attendees");
     } finally {
@@ -328,7 +328,7 @@ if (authLoading || !isAuthenticated || !user) {
                     <div className="flex items-start space-x-3">
                       <Users className="h-5 w-5 text-green-600 mt-0.5" />
                       <div>
-                        <h4 className="font-medium text-gray-900">har</h4>
+                        <h4 className="font-medium text-gray-900">Capacity</h4>
                         <p className="text-gray-600">
                           {event.rsvps?.length || 0} registered
                           {event.maxAttendees && (

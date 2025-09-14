@@ -66,7 +66,7 @@ export async function GET(request: NextRequest) {
         pages: Math.ceil(total / limit),
       },
     });
-  } catch (error) {
+  } catch (error : any) {
     console.error('Error fetching events:', error);
     if (error instanceof Error && error.message.includes('token')) {
       return NextResponse.json(
@@ -104,7 +104,7 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json(event, { status: 201 });
-  } catch (error) {
+  } catch (error : any) {
     console.error('Error creating event:', error);
     if (error instanceof Error && error.message.includes('token')) {
       return NextResponse.json(

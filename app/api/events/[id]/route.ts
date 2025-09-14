@@ -45,7 +45,7 @@ export async function GET(
     }
 
     return NextResponse.json(event);
-  } catch (error) {
+  } catch (error :any) {
     console.error('Error fetching event:', error);
     return NextResponse.json(
       { error: 'Failed to fetch event' },
@@ -97,7 +97,7 @@ export async function PUT(
     });
 
     return NextResponse.json(event);
-  } catch (error) {
+  } catch (error :any) {
     console.error('Error updating event:', error);
     if (error instanceof z.ZodError) {
       return NextResponse.json(
@@ -144,7 +144,7 @@ export async function DELETE(
     });
 
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch (error :any) {
     console.error('Error deleting event:', error);
     return NextResponse.json(
       { error: 'Failed to delete event' },

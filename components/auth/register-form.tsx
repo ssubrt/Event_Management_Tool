@@ -52,7 +52,7 @@ export function RegisterForm() {
 
       toast.success('Account created successfully!');
       router.push("/dashboard");
-    } catch (err) {
+    } catch (err : any) {
       setError("An unexpected error occurred");
     } finally {
       setIsLoading(false);

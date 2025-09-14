@@ -46,7 +46,7 @@ export async function GET(
 
     // Generate CSV content
     const csvHeader = 'Name,Email,Phone,Message,Status,RSVP Date\n';
-    const csvRows = event.rsvps.map(rsvp => {
+    const csvRows = event.rsvps.map((rsvp: any) => {
       const name = `"${rsvp.name.replace(/"/g, '""')}"`;
       const email = `"${rsvp.email}"`;
       const phone = `"${rsvp.phone || ''}"`;
@@ -66,7 +66,7 @@ export async function GET(
         'Content-Disposition': `attachment; filename="event-${event.id}-attendees.csv"`,
       },
     });
-  } catch (error) {
+  } catch (error : any) {
     console.error('Error exporting attendees:', error);
     return NextResponse.json(
       { error: 'Failed to export attendees' },

@@ -51,7 +51,7 @@ function DashboardContent() {
         const data = await response.json();
         setStats(data);
       }
-    } catch (error) {
+    } catch (error :any) {
       console.error("Error fetching dashboard stats:", error);
     } finally {
       setIsLoading(false);
